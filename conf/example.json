@@ -1,0 +1,51 @@
+{
+  "web3Provider": {
+    "type": "http",
+    "url": "http://127.0.0.1:7545"
+  },
+  "walletsAccount": {
+    "owner": 0,
+    "dso": 1,
+    "player": 2,
+    "referee": 3
+  },
+  "smartContracts": {
+    "truffleProjectFolder": "../../solidity/nemogrid-smart-contracts/",
+    "GroupsManager": {
+      "address": "0x0000000000000000000000000000000000000001",
+      "fileName": "GroupsManager.json"
+    },
+    "NGT": {
+      "address": "0x0000000000000000000000000000000000000001",
+      "fileName": "NGT.json"
+    },
+    "MarketsManager": {
+      "fileName": "MarketsManager.json",
+      "defaults": {
+        "type": 2,
+        "maxLower": 10,
+        "maxUpper": 20,
+        "revenueFactor": 10,
+        "penaltyFactor": 20,
+        "dsoStaking": 100,
+        "playerStaking": 200,
+        "percReferee": 2
+      }
+    }
+  },
+  "marketsSettings": {
+    "minPower": 6,
+    "maxPower": 32,
+    "tokens": {
+      "minting": {
+        "forDSO": 20000,
+        "forPlayer": 20000,
+        "forReferee": 1000
+      },
+      "allowance": {
+        "DSO2Market": 10000,
+        "Player2Market": 10000
+      }
+    }
+  }
+}

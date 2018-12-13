@@ -1,0 +1,8 @@
+# .idea folder
+.idea
+
+# venv folder
+venv
+
+# conf ganache files
+ganache*
