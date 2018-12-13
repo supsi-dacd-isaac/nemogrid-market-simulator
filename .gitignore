@@ -6,3 +6,10 @@ venv
 
 # conf ganache files
 ganache*
+
+# conf ropsten files
+ropsten*
+
+# logs folder
+logs
+
