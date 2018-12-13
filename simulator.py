@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
     # set the web3 provider instance
     if cfg['web3Provider']['type'] == 'ipc':
-        web = Web3(Web3.IPCProvider(cfg['web3Provider']['url']))
+        web3 = Web3(Web3.IPCProvider(cfg['web3Provider']['url']))
     elif cfg['web3Provider']['type'] == 'http':
         web3 = Web3(Web3.HTTPProvider(cfg['web3Provider']['url']))
 
