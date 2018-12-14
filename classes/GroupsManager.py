@@ -2,7 +2,7 @@ from classes.SmartContractInterface import SmartContractInterface as SMI
 
 class GroupsManager (SMI):
     """
-    Interface class for Ethereum smart contracts
+    Interface class to interact with GroupsManager contract
     """
 
     def __init__(self, web3, address, truffle_output_file, logger):
@@ -25,16 +25,10 @@ class GroupsManager (SMI):
         """
         Add a group
 
+        :param owner: address of the owner
+        :type owner: string
         :param dso: address of the DSO
         :type dso: string
-        :param player: address of the player
-        :type player: string
-        :param referee: address of the referee
-        :type referee: string
-        :param pars: market parameters
-        :type pars: dict
-        :return TRUE if opening has been successfully | FALSE otherwise
-        :rtype bool
         """
         if self.get_flag(dso) is False:
             try:

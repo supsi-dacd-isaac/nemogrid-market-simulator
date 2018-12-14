@@ -67,8 +67,6 @@ def actuate_manual_commands(web3, operation_mode, wallets, contracts, cfg, logge
         logger.info('Group for DSO %s available at address %s' % (dso, contracts['gsm'].get_address(dso)))
 
     elif cmd == 'PREPARE':
-        # define accounts
-
         if contracts['gsm'].get_flag(dso=wallets['dso']) is False:
             # create group
             logger.info('Create group for DSO %s' % wallets['dso'])

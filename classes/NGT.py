@@ -2,7 +2,7 @@ from classes.SmartContractInterface import SmartContractInterface as SMI
 
 class NGT (SMI):
     """
-    Interface NGT smart contract
+    Interface class to interact with NGT contract
     """
 
     def __init__(self, web3, address, truffle_output_file, logger):

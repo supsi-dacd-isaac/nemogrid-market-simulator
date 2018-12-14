@@ -6,7 +6,7 @@ from classes.SmartContractInterface import SmartContractInterface as SMI
 
 class MarketsManager (SMI):
     """
-    Interface class for Ethereum smart contracts
+    Interface class to interact with MarketsManager contract
     """
 
     def __init__(self, web3, address, truffle_output_file, logger):
@@ -182,15 +182,6 @@ class MarketsManager (SMI):
 
         except Exception as e:
             self.logger.error('EXCEPTION -> %s' % str(e))
-
-    def _wait_transaction(self, tx_hash, timeout=300):
-        self.logger.info('Transaction %s created into the pool' % SMI.hexbytes_2_string(tx_hash))
-
-        # wait for the transaction mining
-        res = self.web3.eth.waitForTransactionReceipt(tx_hash, timeout=timeout)
-
-        self.logger.info('Transaction %s successfully mined in block %i' % (SMI.hexbytes_2_string(tx_hash),
-                                                                            res['blockNumber']))
 
     def get_state(self, idx):
         return int(self.contract.functions.getState(idx).call())
