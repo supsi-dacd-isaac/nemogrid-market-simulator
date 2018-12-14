@@ -137,13 +137,13 @@ if __name__ == "__main__":
               }
 
     # define the contracts
-    sc_folder = '%sbuild/contracts/' % cfg['smartContracts']['truffleProjectFolder']
+    sc_folder = cfg['smartContracts']['truffleProjectFolder']
     contracts = {
                     'ngt': NGT(web3=web3, address=cfg['smartContracts']['NGT']['address'], logger=logger,
-                               truffle_output_file='%s%s' % (sc_folder, cfg['smartContracts']['NGT']['fileName'])),
+                               truffle_output_file='%s/%s' % (sc_folder, cfg['smartContracts']['NGT']['fileName'])),
 
                     'gsm': GSM(web3=web3, address=cfg['smartContracts']['GroupsManager']['address'], logger=logger,
-                               truffle_output_file='%s%s' % (sc_folder, cfg['smartContracts']['GroupsManager']['fileName']))
+                               truffle_output_file='%s/%s' % (sc_folder, cfg['smartContracts']['GroupsManager']['fileName']))
                 }
     logger.info('Operation mode -> %s' % operation_mode)
 
@@ -153,7 +153,7 @@ if __name__ == "__main__":
         addr_mm = contracts['gsm'].get_address(dso=wallets['dso'])
 
         msm = MSM(web3=web3, address=addr_mm, logger=logger,
-                  truffle_output_file='%s%s' % (sc_folder, cfg['smartContracts']['MarketsManager']['fileName']))
+                  truffle_output_file='%s/%s' % (sc_folder, cfg['smartContracts']['MarketsManager']['fileName']))
 
         while True:
             # Start a market

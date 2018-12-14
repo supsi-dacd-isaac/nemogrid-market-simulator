@@ -1,7 +1,5 @@
 import json
 
-from web3 import Web3
-
 class SmartContractInterface:
     """
     Interface class for Ethereum smart contracts
